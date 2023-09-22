@@ -6,6 +6,8 @@ const getExercise = (req: Request, res: Response, next: NextFunction) => {
 	const exerciseId = req.params.exerciseId;
 
 	return Exercise.findById(exerciseId)
+		.populate("workout") // will populate workout with name of workout instead of exercise ID
+		.select("-__v") // will not return "__v" version key
 		.then((exercise) => {
 			exercise
 				? res.status(200).json({ exercise })
@@ -17,6 +19,8 @@ const getExercise = (req: Request, res: Response, next: NextFunction) => {
 };
 const getAllExercise = (req: Request, res: Response, next: NextFunction) => {
 	return Exercise.find()
+		.populate("workout") // will populate workout with name of workout instead of exercise ID
+		.select("-__v") // will not return "__v" version key
 		.then((exercises) => {
 			res.status(200).json({ exercises });
 		})

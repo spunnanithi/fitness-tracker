@@ -6,6 +6,7 @@ const getWorkout = (req: Request, res: Response, next: NextFunction) => {
 	const workoutId = req.params.workoutId;
 
 	return Workout.findById(workoutId)
+		.select("-__v") // will not return "_v" version key
 		.then((workout) => {
 			workout
 				? res.status(200).json({ workout })
@@ -17,6 +18,7 @@ const getWorkout = (req: Request, res: Response, next: NextFunction) => {
 };
 const getAllWorkout = (req: Request, res: Response, next: NextFunction) => {
 	return Workout.find()
+		.select("-__v") // will not return "_v" version key
 		.then((workouts) => {
 			res.status(200).json({ workouts });
 		})
