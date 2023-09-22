@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
-import WorkoutModel from "../models/Workout";
+import Workout from "../models/Workout";
 
 const getWorkout = (req: Request, res: Response, next: NextFunction) => {
 	const workoutId = req.params.workoutId;
 
-	return WorkoutModel.findById(workoutId)
+	return Workout.findById(workoutId)
 		.then((workout) => {
 			workout
 				? res.status(200).json({ workout })
@@ -16,7 +16,7 @@ const getWorkout = (req: Request, res: Response, next: NextFunction) => {
 		});
 };
 const getAllWorkout = (req: Request, res: Response, next: NextFunction) => {
-	return WorkoutModel.find()
+	return Workout.find()
 		.then((workouts) => {
 			res.status(200).json({ workouts });
 		})
@@ -27,7 +27,7 @@ const getAllWorkout = (req: Request, res: Response, next: NextFunction) => {
 const createWorkout = (req: Request, res: Response, next: NextFunction) => {
 	const { name, date, activity } = req.body;
 
-	const workout = new WorkoutModel({
+	const workout = new Workout({
 		_id: new mongoose.Types.ObjectId(),
 		name,
 		date,
@@ -42,7 +42,7 @@ const createWorkout = (req: Request, res: Response, next: NextFunction) => {
 const updateWorkout = (req: Request, res: Response, next: NextFunction) => {
 	const workoutId = req.params.workoutId;
 
-	return WorkoutModel.findById(workoutId)
+	return Workout.findById(workoutId)
 		.then((workout) => {
 			if (workout) {
 				workout.set(req.body);
@@ -62,7 +62,7 @@ const updateWorkout = (req: Request, res: Response, next: NextFunction) => {
 const deleteWorkout = (req: Request, res: Response, next: NextFunction) => {
 	const workoutId = req.params.workoutId;
 
-	return WorkoutModel.findByIdAndDelete(workoutId)
+	return Workout.findByIdAndDelete(workoutId)
 		.then((workout) =>
 			workout
 				? res.status(201).json({ message: "Workout deleted" })

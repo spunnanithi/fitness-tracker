@@ -3,6 +3,7 @@ import http from "http";
 import mongoose from "mongoose";
 import cors from "cors";
 import { workoutRouter } from "./routes/Workout";
+import { exerciseRouter } from "./routes/Exercise";
 import { config } from "./config/config";
 import Logging from "./library/Logging";
 
@@ -63,6 +64,7 @@ const StartServer = () => {
 
 	/** Routes */
 	router.use("/api", workoutRouter);
+	router.use("/api", exerciseRouter);
 
 	/** Healthcheck - used to check if API is working properly */
 	router.get("/ping", (req, res, next) =>
