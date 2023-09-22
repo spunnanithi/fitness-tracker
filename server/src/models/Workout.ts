@@ -13,8 +13,8 @@ const WorkoutSchema: Schema = new Schema(
 		name: { type: String, required: true },
 		date: Date,
 		activity: String,
-	}
-	// { timestamps: true }
+	},
+	{ timestamps: true }
 );
 
 const WorkoutModel = mongoose.model<IWorkoutModel>("Workout", WorkoutSchema);

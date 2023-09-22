@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
 import WorkoutModel from "../models/Workout";
-import { error } from "console";
 
 const getWorkout = (req: Request, res: Response, next: NextFunction) => {
 	const workoutId = req.params.workoutId;

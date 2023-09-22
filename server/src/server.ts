@@ -62,7 +62,7 @@ const StartServer = () => {
 	});
 
 	/** Routes */
-	router.use("/workouts", workoutRouter);
+	router.use("/api", workoutRouter);
 
 	/** Healthcheck - used to check if API is working properly */
 	router.get("/ping", (req, res, next) =>
