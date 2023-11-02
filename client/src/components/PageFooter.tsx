@@ -45,19 +45,21 @@ const SocialButton = ({
 export default function PageFooter() {
 	return (
 		<Box
-			minW="100vw"
+			position="absolute"
+			bottom="0"
 			bg={useColorModeValue("gray.50", "gray.900")}
 			color={useColorModeValue("gray.700", "gray.200")}>
 			<Container
 				as={Stack}
 				maxW={"6xl"}
+				px={1}
 				py={4}
 				direction={{ base: "column", md: "row" }}
 				spacing={4}
 				justify={{ base: "center", md: "space-between" }}
 				align={{ base: "center", md: "center" }}>
-				<Text>© 2022 Chakra Templates. All rights reserved</Text>
-				<Stack direction={"row"} spacing={6}>
+				<Text>© 2023 Developed By: Sirasit Punnanithi.</Text>
+				<Stack direction={"row"} spacing={2}>
 					<SocialButton label={"Twitter"} href={"#"}>
 						<FaTwitter />
 					</SocialButton>

@@ -82,6 +82,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 					{link.name}
 				</NavItem>
 			))}
+			<PageFooter />
 		</Box>
 	);
 };
