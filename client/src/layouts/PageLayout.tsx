@@ -22,10 +22,11 @@ import {
 } from "@chakra-ui/react";
 import {
 	FiHome,
-	FiTrendingUp,
-	FiCompass,
-	FiStar,
-	FiSettings,
+	FiEdit,
+	// FiTrendingUp,
+	// FiCompass,
+	// FiStar,
+	// FiSettings,
 	FiMenu,
 	FiBell,
 	FiChevronDown,
@@ -36,11 +37,13 @@ import PageFooter from "../components/PageFooter";
 
 interface LinkItemProps {
 	name: string;
+	path: string;
 	icon: IconType;
 }
 
 interface NavItemProps extends FlexProps {
 	icon: IconType;
+	path: string;
 	children: React.ReactNode;
 }
 
@@ -53,11 +56,12 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-	{ name: "Home", icon: FiHome },
-	{ name: "Trending", icon: FiTrendingUp },
-	{ name: "Explore", icon: FiCompass },
-	{ name: "Favourites", icon: FiStar },
-	{ name: "Settings", icon: FiSettings },
+	{ name: "Dashboard", path: "/", icon: FiHome },
+	{ name: "Workouts", path: "/workouts", icon: FiEdit },
+	// { name: "Trending", icon: FiTrendingUp },
+	// { name: "Explore", icon: FiCompass },
+	// { name: "Favourites", icon: FiStar },
+	// { name: "Settings", icon: FiSettings },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -78,7 +82,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 				<CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
 			</Flex>
 			{LinkItems.map((link) => (
-				<NavItem key={link.name} icon={link.icon}>
+				<NavItem path={link.path} key={link.name} icon={link.icon}>
 					{link.name}
 				</NavItem>
 			))}
@@ -87,11 +91,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 	);
 };
 
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, path, children, ...rest }: NavItemProps) => {
 	return (
 		<Box
 			as="a"
-			href="#"
+			href={path}
 			style={{ textDecoration: "none" }}
 			_focus={{ boxShadow: "none" }}>
 			<Flex

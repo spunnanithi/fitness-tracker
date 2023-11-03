@@ -1,12 +1,16 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
 import PageLayout from "./layouts/PageLayout";
+import Dashboard from "./pages/Dashboard";
+import Workouts from "./pages/Workouts";
 
 const router = createBrowserRouter([
 	{
 		element: <PageLayout />,
-		children: [{ path: "/", element: <Dashboard /> }],
+		children: [
+			{ path: "/", element: <Dashboard /> },
+			{ path: "/workouts", element: <Workouts /> },
+		],
 	},
 ]);
 
