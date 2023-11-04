@@ -1,0 +1,52 @@
+{
+    "workouts": [
+        {
+            "id": 1,
+            "userId": 1,
+            "title": "Chest Day",
+            "date": "2020-04-03T09:22:20.45-04:00",
+            "exercises": [
+                {
+                    "name": "Bench Press",
+                    "weight": "225",
+                    "reps": "5",
+                    "sets": "5"
+                },
+                {
+                    "name": "Incline Bench Press",
+                    "weight": "225",
+                    "reps": "5",
+                    "sets": "5"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "title": "Back Day",
+            "date": "2020-04-03T09:22:20.45-04:00",
+            "exercises": [
+                {
+                    "name": "Deadlift",
+                    "weight": "225",
+                    "reps": "5",
+                    "sets": "5"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "title": "Leg Day",
+            "date": "2020-04-03T09:22:20.45-04:00",
+            "exercises": [
+                {
+                    "name": "Squat",
+                    "weight": "225",
+                    "reps": "5",
+                    "sets": "5"
+                }
+            ]
+        }
+    ]
+}

@@ -56,7 +56,7 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-	{ name: "Dashboard", path: "/", icon: FiHome },
+	{ name: "Dashboard", path: "/dashboard", icon: FiHome },
 	{ name: "Workouts", path: "/workouts", icon: FiEdit },
 	// { name: "Trending", icon: FiTrendingUp },
 	// { name: "Explore", icon: FiCompass },
