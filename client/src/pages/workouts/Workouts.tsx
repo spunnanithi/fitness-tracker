@@ -57,7 +57,11 @@ function Workouts() {
 					<Tbody>
 						{workouts.map((workout: Workout, index) => {
 							return (
-								<Tr onClick={() => handlePageRedirect(workout.id)} key={index}>
+								<Tr
+									transition="all .25s ease-in-out"
+									_hover={{ transform: "scale(1.035)" }}
+									onClick={() => handlePageRedirect(workout.id)}
+									key={index}>
 									<Td>{workout.date}</Td>
 									<Td>{workout.title}</Td>
 									<Td>{workout.id}</Td>
