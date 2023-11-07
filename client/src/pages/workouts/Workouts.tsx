@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FormatDate } from "../../helpers/FormatDate";
 
 function Workouts() {
 	const [workouts, setWorkouts] = useState([]);
@@ -62,7 +63,7 @@ function Workouts() {
 									_hover={{ transform: "scale(1.035)" }}
 									onClick={() => handlePageRedirect(workout.id)}
 									key={index}>
-									<Td>{workout.date}</Td>
+									<Td>{FormatDate(workout.date)}</Td>
 									<Td>{workout.title}</Td>
 									<Td>{workout.id}</Td>
 								</Tr>
