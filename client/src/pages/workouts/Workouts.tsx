@@ -70,13 +70,13 @@ function Workouts() {
 							);
 						})}
 					</Tbody>
-					<Tfoot>
+					{/* <Tfoot>
 						<Tr>
 							<Th>To convert</Th>
 							<Th>into</Th>
 							<Th>multiply by</Th>
 						</Tr>
-					</Tfoot>
+					</Tfoot> */}
 				</Table>
 			</TableContainer>
 		</Box>
